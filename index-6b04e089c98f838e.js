@@ -475,9 +475,12 @@ function getImports() {
     imports.wbg.__wbg_addEventListener_1fc744729ac6dc27 = function() { return handleError(function (arg0, arg1, arg2, arg3, arg4) {
         getObject(arg0).addEventListener(getStringFromWasm0(arg1, arg2), getObject(arg3), getObject(arg4));
     }, arguments) };
-    imports.wbg.__wbg_selectedIndex_006e7532179f4366 = function(arg0) {
-        const ret = getObject(arg0).selectedIndex;
-        return ret;
+    imports.wbg.__wbg_value_2527a85fd5ada680 = function(arg0, arg1) {
+        const ret = getObject(arg1).value;
+        const ptr0 = passStringToWasm0(ret, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+        const len0 = WASM_VECTOR_LEN;
+        getInt32Memory0()[arg0 / 4 + 1] = len0;
+        getInt32Memory0()[arg0 / 4 + 0] = ptr0;
     };
     imports.wbg.__wbg_parentNode_e397bbbe28be7b28 = function(arg0) {
         const ret = getObject(arg0).parentNode;
@@ -587,12 +590,12 @@ function getImports() {
     imports.wbg.__wbindgen_throw = function(arg0, arg1) {
         throw new Error(getStringFromWasm0(arg0, arg1));
     };
-    imports.wbg.__wbindgen_closure_wrapper261 = function(arg0, arg1, arg2) {
-        const ret = makeMutClosure(arg0, arg1, 125, __wbg_adapter_16);
+    imports.wbg.__wbindgen_closure_wrapper262 = function(arg0, arg1, arg2) {
+        const ret = makeMutClosure(arg0, arg1, 126, __wbg_adapter_16);
         return addHeapObject(ret);
     };
-    imports.wbg.__wbindgen_closure_wrapper613 = function(arg0, arg1, arg2) {
-        const ret = makeMutClosure(arg0, arg1, 249, __wbg_adapter_19);
+    imports.wbg.__wbindgen_closure_wrapper614 = function(arg0, arg1, arg2) {
+        const ret = makeMutClosure(arg0, arg1, 250, __wbg_adapter_19);
         return addHeapObject(ret);
     };
 
@@ -630,7 +633,7 @@ function initSync(module) {
 
 async function init(input) {
     if (typeof input === 'undefined') {
-        input = new URL('index-a28c628603744068_bg.wasm', import.meta.url);
+        input = new URL('index-6b04e089c98f838e_bg.wasm', import.meta.url);
     }
     const imports = getImports();
 
